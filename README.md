@@ -10,14 +10,20 @@ A helm chart that installs knative-eventing and deploys an ApiServerSource
 * On linux make sure that you have kvm virtualization installed and running. On fedora/rhel run
 ```bash
 sudo dnf install @virtualization
-sudo systemctl enable --now libvirtd
-sudo usermod -aG libvirt $USER
-sudo usermod -aG docker $USER
-newgrp libvirt
-newgrp docker
 ```
-
-On linux start minikube with minikube start --driver=kvm2
+```bash
+sudo systemctl enable --now libvirtd
+```
+```bash
+sudo usermod -aG libvirt $USER
+```
+```bash
+sudo usermod -aG docker $USER
+```
+```bash
+newgrp libvirt
+```
+* On linux start minikube with minikube start --driver=kvm2
 
 ## Use the Chart
 
