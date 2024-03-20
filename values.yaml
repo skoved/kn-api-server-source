@@ -1,0 +1,25 @@
+# Default values for kn-api-server-source.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+apiServerSourceNs: "api-server-source"
+testNs: "test"
+
+serviceAccount: "kn-service-account"
+
+roleName: "kn-role"
+roleRules:
+  - apiGroups:
+      - ""
+    resources:
+      - events
+    verbs:
+      - get
+      - list
+      - watch
+
+roleBindingName: "kn-role-binding"
+
+sinkName: "event-display"
+
+apiServerSourceName: "api-server-source"

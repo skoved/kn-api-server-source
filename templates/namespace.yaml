@@ -1,0 +1,15 @@
+# This is the namespace that ApiServerSource is deployed to
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.apiServerSourceNs }}
+
+---
+
+# This is the namespace that ApiServerSource will listen to changes in
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.testNs }}
+  labels:
+    kubearchive: watch

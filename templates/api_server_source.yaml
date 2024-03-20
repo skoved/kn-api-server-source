@@ -1,0 +1,19 @@
+apiVersion: sources.knative.dev/v1
+kind: ApiServerSource
+metadata:
+  name: {{ .Values.apiServerSourceName }}
+  namespace: {{ .Values.apiServerSourceNs }}
+spec:
+  serviceAccountName: {{ .Values.serviceAccount }}
+  mode: {{ .Values.apiServerSourceMode }}
+  namespaceSelector:
+    matchLabels:
+      kubearchive: watch
+  resources:
+    - apiVersion: v1
+      kind: Event
+  sink:
+    ref:
+      apiVersion: v1
+      kind: Service
+      name: {{ .Values.sinkName }}

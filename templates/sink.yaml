@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.sinkName }}
+  namespace: {{ .Values.apiServerSourceNs }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: &labels
+      app: event-display
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      containers:
+        - name: {{ .Values.sinkName }}
+          image: gcr.io/knative-releases/knative.dev/eventing/cmd/event_display
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.sinkName }}
+  namespace: {{ .Values.apiServerSourceNs }}
+spec:
+  selector:
+    app: event-display
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
