@@ -1,6 +1,8 @@
 # kn-api-server-source
 
-A helm chart that installs knative-eventing and deploys an ApiServerSource
+A helm chart that installs knative-eventing and deploys an ApiServerSource follwing the
+[Creating an ApiServerSource Object guide](https://knative.dev/docs/eventing/sources/apiserversource/getting-started/#creating-an-apiserversource-object)
+from knative-eventing. The ApiServerSource is deployed in the `api-server-source` namespace by default.
 
 ## Requirements
 
@@ -29,7 +31,7 @@ minikube start --driver=kvm2
 
 To deploy
 ```bash
-helm install <a string with no spaces> ./kn-api-server-source
+helm install <a string with no spaces> .
 ```
 
 To remove the deployment
