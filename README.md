@@ -9,7 +9,7 @@ A helm chart that installs knative-eventing and deploys an ApiServerSource
 * Be logged into a kubernetes cluster. If you don't have a cluster, installation instructions for minikube can be found [here](https://minikube.sigs.k8s.io/docs/start/)
 * On linux make sure that you have kvm virtualization installed and running. On fedora/rhel run
 ```bash
-sudo dnf install @virtualization docker
+sudo dnf install @virtualization
 sudo systemctl enable --now libvirtd
 sudo usermod -aG libvirt $USER
 sudo usermod -aG docker $USER
