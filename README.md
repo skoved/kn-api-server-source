@@ -20,7 +20,10 @@ sudo usermod -aG libvirt $USER
 ```bash
 newgrp libvirt
 ```
-* On linux start minikube with minikube start --driver=kvm2
+* On linux start minikube with
+```bash
+minikube start --driver=kvm2
+```
 
 ## Use the Chart
 
