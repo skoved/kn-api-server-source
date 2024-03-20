@@ -18,9 +18,6 @@ sudo systemctl enable --now libvirtd
 sudo usermod -aG libvirt $USER
 ```
 ```bash
-sudo usermod -aG docker $USER
-```
-```bash
 newgrp libvirt
 ```
 * On linux start minikube with minikube start --driver=kvm2
