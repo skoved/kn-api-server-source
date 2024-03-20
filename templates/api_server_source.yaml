@@ -6,9 +6,6 @@ metadata:
 spec:
   serviceAccountName: {{ .Values.serviceAccount }}
   mode: {{ .Values.apiServerSourceMode }}
-  namespaceSelector:
-    matchLabels:
-      kubearchive: watch
   resources:
     - apiVersion: v1
       kind: Event
