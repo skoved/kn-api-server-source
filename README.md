@@ -6,7 +6,6 @@ A helm chart that installs knative-eventing and deploys an ApiServerSource
 
 * Helm must be installed. Installation instructions for helm can be found [here](https://helm.sh/docs/intro/install/)
 * Follow the instructions for verifying image signatures for knative-eventing [here](https://knative.dev/docs/install/yaml-install/eventing/install-eventing-with-yaml/#verifying-image-signatures)
-* Be logged into a kubernetes cluster. If you don't have a cluster, installation instructions for minikube can be found [here](https://minikube.sigs.k8s.io/docs/start/)
 * On linux make sure that you have kvm virtualization installed and running. On fedora/rhel run
 ```bash
 sudo dnf install @virtualization
@@ -20,7 +19,8 @@ sudo usermod -aG libvirt $USER
 ```bash
 newgrp libvirt
 ```
-* On linux start minikube with
+* Be logged into a kubernetes cluster. If you don't have a cluster, installation instructions for minikube can be found [here](https://minikube.sigs.k8s.io/docs/start/)
+* If using minikube on linux, start minikube with
 ```bash
 minikube start --driver=kvm2
 ```
