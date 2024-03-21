@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.apiServerSourceName }}
   namespace: {{ .Values.apiServerSourceNs }}
 spec:
-  serviceAccountName: {{ .Values.serviceAccount }}
+  serviceAccountName: {{ .Values.apiServerSourceSA }}
   mode: {{ .Values.apiServerSourceMode }}
   resources:
     - apiVersion: v1
