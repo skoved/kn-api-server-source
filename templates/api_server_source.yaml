@@ -9,6 +9,9 @@ spec:
   resources:
     - apiVersion: v1
       kind: Event
+  namespaceSelector:
+    matchLabels:
+      kubearchive: "watch"
   sink:
     ref:
       apiVersion: v1

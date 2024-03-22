@@ -10,10 +10,10 @@ metadata:
   namespace: {{ .namespace }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
+  kind: ClusterRole
   name: {{ .roleName }}
 subjects:
 - kind: ServiceAccount
   name: {{ .serviceAccount }}
-  namespace: {{ .namespace }}
+  namespace: {{ $.Values.apiServerSourceNs }}
 {{- end }}

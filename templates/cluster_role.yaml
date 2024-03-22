@@ -1,13 +1,7 @@
-{{- /*
-apply the role to all namespaces
-*/ -}}
-{{- range .Values.namespaces }}
----
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: ClusterRole
 metadata:
-  name: {{ .roleName }}
-  namespace: {{ .namespace }}
+  name: {{ .Values.roleName }}
 rules: 
   - apiGroups:
       - ""
@@ -17,4 +11,3 @@ rules:
       - get
       - list
       - watch
-{{- end }}
