@@ -4,11 +4,14 @@ metadata:
   name: {{ .Values.apiServerSourceName }}
   namespace: {{ .Values.apiServerSourceNs }}
 spec:
-  serviceAccountName: {{ .Values.serviceAccount }}
+  serviceAccountName: {{ .Values.apiServerSourceSA }}
   mode: {{ .Values.apiServerSourceMode }}
   resources:
     - apiVersion: v1
       kind: Event
+  namespaceSelector:
+    matchLabels:
+      kubearchive: "watch"
   sink:
     ref:
       apiVersion: v1

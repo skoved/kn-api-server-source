@@ -2,12 +2,19 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-apiServerSourceNs: "api-server-source"
-testNs: "test"
-
-serviceAccount: "kn-service-account"
+namespaces:
+  - namespace: "api-server-source"
+    roleName: "kn-role"
+    roleBindingName: "kn-role-binding"
+    serviceAccount: "kn-service-account"
+  - namespace: "test"
+    roleName: "kn-role"
+    roleBindingName: "kn-role-binding"
+    serviceAccount: "kn-service-account"
+    watch: true
 
 roleName: "kn-role"
+
 roleRules:
   - apiGroups:
       - ""
@@ -18,8 +25,10 @@ roleRules:
       - list
       - watch
 
-roleBindingName: "kn-role-binding"
 
 sinkName: "event-display"
 
 apiServerSourceName: "api-server-source"
+apiServerSourceNs: "api-server-source"
+apiServerSourceSA: "kn-service-account"
+apiServerSourceMode: "Resource"
