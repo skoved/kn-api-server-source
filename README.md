@@ -22,7 +22,22 @@ sudo usermod -aG libvirt $USER
 newgrp libvirt
 ```
 * Be logged into a kubernetes cluster. If you don't have a cluster, installation instructions for minikube can be found [here](https://minikube.sigs.k8s.io/docs/start/)
-* If using minikube on linux, start minikube with
+* If using minikube on linux, docker or podman must be installed. On fedora/rhel run
+```bash
+sudo dnf install (podman|docker)
+```
+  * if podman installed add the following alias to your .bashrc
+  ```bash
+  alias docker=podman
+  ```
+  * if docker installed run the following commands
+  ```bash
+  sudo usermod -aG docker $usermod
+  ```
+  ```bash
+  newgrp docker
+  ```
+* start minikube
 ```bash
 minikube start --driver=kvm2
 ```
