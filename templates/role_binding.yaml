@@ -1,19 +1,12 @@
-{{- /*
-apply the role binding to all namespaces
-*/ -}}
-{{- range .Values.namespaces }}
----
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
-  name: {{ .roleBindingName }}
-  namespace: {{ .namespace }}
+  name: {{ .Values.roleBindingName }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ .roleName }}
+  name: {{ .Values.roleName }}
 subjects:
 - kind: ServiceAccount
-  name: {{ .serviceAccount }}
-  namespace: {{ $.Values.apiServerSourceNs }}
-{{- end }}
+  name: {{ .Values.apiServerSourceSA }}
+  namespace: {{ .Values.apiServerSourceNs }}

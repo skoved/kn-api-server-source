@@ -4,16 +4,11 @@
 
 namespaces:
   - namespace: "api-server-source"
-    roleName: "kn-role"
-    roleBindingName: "kn-role-binding"
-    serviceAccount: "kn-service-account"
   - namespace: "test"
-    roleName: "kn-role"
-    roleBindingName: "kn-role-binding"
-    serviceAccount: "kn-service-account"
     watch: true
 
 roleName: "kn-role"
+roleBindingName: "kn-role-binding"
 
 roleRules:
   - apiGroups:
@@ -24,7 +19,6 @@ roleRules:
       - get
       - list
       - watch
-
 
 sinkName: "event-display"
 
