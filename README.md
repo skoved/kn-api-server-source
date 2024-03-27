@@ -5,7 +5,9 @@ A helm chart that installs knative-eventing and deploys an ApiServerSource follw
 from knative-eventing. The ApiServerSource is deployed in the `api-server-source` namespace by default. By default the ApiServerSource is listening for 
 events in the `test` namespace.
 
-To deploy and have ApiServerSource send clound events to a Channel use the `channel` branch of this repo.
+To deploy and have ApiServerSource send cloud events to a Channel use the `channel` branch of this repo.
+
+To deploy and have ApiServerSource send cloud events to a Broker use the `broker` branch of this repo.
 
 ## Requirements
 
