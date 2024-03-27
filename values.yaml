@@ -26,3 +26,7 @@ apiServerSourceName: "api-server-source"
 apiServerSourceNs: "api-server-source"
 apiServerSourceSA: "kn-service-account"
 apiServerSourceMode: "Resource"
+
+brokerName: "event-broker"
+
+triggerName: "event-trigger"
