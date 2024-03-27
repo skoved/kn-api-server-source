@@ -26,3 +26,7 @@ apiServerSourceName: "api-server-source"
 apiServerSourceNs: "api-server-source"
 apiServerSourceSA: "kn-service-account"
 apiServerSourceMode: "Resource"
+
+channelName: "event-channel"
+
+subscriptionName: "event-subscription"
